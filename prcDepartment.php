@@ -7,11 +7,11 @@
 <?PHP
  echo "<br><br><br><br>";
  
-      $name=$_POST[name];	 	  	 
-      $dep_name=$_POST[name_mdep];
+      $name=$_POST['name'];	 	  	 
+      $dep_name=$_POST['name_mdep'];
  	  
-	if($_POST[method]=='update_dep'){
-		$dep_id=$_POST[dep_id];	 
+	if($_POST['method']=='update_dep'){
+		$dep_id=$_POST['dep_id'];	 
 		$sqlUpdate=mysql_query("update department  SET name='$name',main_dep='$dep_name' 
 		where dep_id='$dep_id' "); 	
  
@@ -40,8 +40,8 @@
 								}
    
    }//-----------------------------------------end update
-   else if($method=='delete_dep'){	 	 
-   $dep_id=$_GET[dep_id];	 	  
+   else if($_POST['method']=='delete_dep'){	 	 
+   $dep_id=$_GET['dep_id'];	 	  
 		$sqlDelete=mysql_query("delete from department  
 		where dep_id='$dep_id' "); 
 				
@@ -69,7 +69,7 @@
 								}
  				 
    }//-----------------------------------------end delete
-   elseif($method=='insert_dep'){
+   elseif($_POST['method']=='insert_dep'){
  	 	$sqlInsert=mysql_query("insert into department  SET    name='$name',main_dep='$dep_name' "); 
  
  							if($sqlInsert==false){
@@ -94,7 +94,7 @@
 								            </div>";								
 							 		 	 echo" <META HTTP-EQUIV='Refresh' CONTENT='2;URL=frmDepartment.php'>";
 								}  	
-   }elseif($method=='insert_mdep'){
+   }elseif($_POST['method']=='insert_mdep'){
  	 	$sqlInsert=mysql_query("insert into department_group  SET    dep_name='$dep_name' "); 
  
  							if($sqlInsert==false){
@@ -120,8 +120,8 @@
 							 		 	 echo" <META HTTP-EQUIV='Refresh' CONTENT='2;URL=frmDepartment.php'>";
 								}  	
 
-   }elseif($method=='update_mdep'){
-       $mdep_id=$_POST[mdep_id];
+   }elseif($_POST['method']=='update_mdep'){
+       $mdep_id=$_POST['mdep_id'];
  	 	$sqlUpdate=mysql_query("update department_group  SET    dep_name='$dep_name' where main_dep='$mdep_id' "); 
  
  							if($sqlUpdate==false){
@@ -147,8 +147,8 @@
 							 		 	 echo" <META HTTP-EQUIV='Refresh' CONTENT='2;URL=frmDepartment.php'>";
 								}  	
 
-   }else if($method=='delete_mdep'){	 	 
-   $dep_id=$_GET[mdep_id];	 	  
+   }else if($_POST['method']=='delete_mdep'){	 	 
+   $dep_id=$_GET['mdep_id'];	 	  
 		$sqlDelete=mysql_query("delete from department_group  
 		where main_dep='$dep_id' "); 
 				
