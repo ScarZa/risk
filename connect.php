@@ -1,8 +1,8 @@
 <?php
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = 'usbw';
-$dbname = 'risk';
+$dbhost = 'localhost';//ชื่อโฮส
+$dbuser = 'root';//ชื่อ user
+$dbpass = '';//password 
+$dbname = 'risk';//ชื่อ database
  	$con = mysql_connect("$dbhost","$dbuser","$dbpass")or die("can not connect database");
 	$db = mysql_select_db("$dbname",$con)or die("can not select database");
 	mysql_query("SET NAMES 'utf8'",$con);
