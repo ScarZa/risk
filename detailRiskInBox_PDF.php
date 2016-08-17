@@ -69,7 +69,7 @@ ob_start(); // ทำการเก็บค่า html นะครับ*/
           <div class="col-lg-12">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><span class="fa fa-envelope"></span> Detail</h3>
+                <h3 class="panel-title"><span class="fa fa-envelope"></span> รายละเอียด</h3>
               </div>
               <div class="panel-body">
               <table width='100%'>
@@ -115,7 +115,8 @@ ob_start(); // ทำการเก็บค่า html นะครับ*/
                
              		 
             	  </div>
-              </div>
+              </div><br><br>
+              *** เอกสารสำหรับคณะกรรมการความเสี่ยง ห้ามเผยแพร่ ***
           </div>
     </div>
 <?php
