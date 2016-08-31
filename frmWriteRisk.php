@@ -118,7 +118,7 @@ function nextbox(e, id) {
                         echo "<option value='".$i."' $selected>".$i."</option>";}
                     }?>
                 </select>
-                        </div>
+                    </div> <b>นาที</b>
                  </div><br>
                   <div class="form-group">
              	<?php //include 'jquery.php';?>
