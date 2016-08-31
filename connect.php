@@ -1,7 +1,7 @@
 <?php
 $dbhost = 'localhost';//ชื่อโฮส
 $dbuser = 'root';//ชื่อ user
-$dbpass = 'usbw';//password 
+$dbpass = '';//password 
 $dbname = 'risk';//ชื่อ database
  	$con = mysql_connect("$dbhost","$dbuser","$dbpass")or die("can not connect database");
 	$db = mysql_select_db("$dbname",$con)or die("can not select database");

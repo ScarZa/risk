@@ -27,7 +27,7 @@ function backup_tables($host,$user,$pass,$name,$tables = '*')
         $result = mysql_query('SELECT * FROM '.$table);
         $num_fields = mysql_num_fields($result);
 
-        $return.= 'DROP TABLE '.$table.';';
+        $return.= 'DROP TABLE IF EXISTS '.$table.';';
         $row2 = mysql_fetch_row(mysql_query('SHOW CREATE TABLE '.$table));
         $return.= "\n\n".$row2[1].";\n\n";
 

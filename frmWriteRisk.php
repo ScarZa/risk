@@ -92,11 +92,34 @@ function nextbox(e, id) {
                 <label>วันที่เกิดเหตุ &nbsp;</label>
              	<!--<input type="date" placeholder="วันที่เกิดเหตุ"   class="form-control"  id='take_date'   name="take_date"  required  onkeydown="return nextbox(event, 'take_time');" />-->
 		<?php include'DatePicker/index.php'; ?> 
-             	</div>
+                  </div><p>
              	 <div class="form-group">    
              	 <label>เวลาที่เกิดเหตุ &nbsp;</label>
-                <input type="text"   placeholder="เวลาที่เกิดเหตุ เช่น 12.30น." id='take_time'  class="form-control"   size='' name='take_time' onkeydown="return nextbox(event, 'combobox1');" value="<?=$resultEdit[take_time]?>" />
-                 </div><br><br>
+                <div class="form-group"> 
+                <select name="take_hour" id="take_hour" class="form-control">
+                    <option value="">ชั่วโมง</option>
+                    <?php for($i=0;$i<=23;$i++){
+                        if($i== substr($resultEdit['take_time'],0,2)){$selected='selected';}else{$selected='';}
+                        if($i<10){
+                        echo "<option value='0".$i."' $selected>0".$i."</option>";    
+                        }else{
+                        echo "<option value='".$i."' $selected>".$i."</option>";}
+                    }?>
+                </select>
+                </div> <b>:</b>
+                    <div class="form-group"> 
+                <select name="take_minute" id="take_minute" class="form-control">
+                    <option value="">นาที</option>
+                    <?php for($i=0;$i<=59;$i++){
+                        if($i== substr($resultEdit['take_time'],3,2)){$selected='selected';}else{$selected='';}
+                    if($i<10){
+                        echo "<option value='0".$i."' $selected>0".$i."</option>";    
+                        }else{
+                        echo "<option value='".$i."' $selected>".$i."</option>";}
+                    }?>
+                </select>
+                        </div>
+                 </div><br>
                   <div class="form-group">
              	<?php //include 'jquery.php';?>
  				<label>สถานที่เกิดเหตุ &nbsp;</label>

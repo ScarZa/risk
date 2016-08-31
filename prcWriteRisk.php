@@ -16,8 +16,10 @@
 			 $an=$_POST[an];		 
 			 $take_date=explode("/",$take_date_conv);
 			 $take_date_year=$take_date[2]-543;
-			 $take_date="$take_date_year-$take_date[1]-$take_date[0]"; 		 
-			 $take_time=$_POST[take_time];		 
+			 $take_date="$take_date_year-$take_date[1]-$take_date[0]"; 
+                         $take_hour=$_POST['take_hour'];
+                         $take_minute=$_POST['take_minute'];
+			 $take_time=$take_hour.":".$take_minute;		 
 			 $take_place=$_POST[take_place];		 	
 			 $take_dep=$_POST[take_dep];		 
 			 $category=$_POST[category];		 
