@@ -23,6 +23,14 @@
 
         <!-- InstanceBeginEditable name="head" -->
         <script language="javascript" src="chart/FusionCharts/FusionCharts.js"></script>
+        <style type="text/css">
+html{
+-moz-filter:grayscale(100%);
+-webkit-filter:grayscale(100%);
+filter:gray;
+filter:grayscale(100%);
+}
+</style>
         <script type="text/javascript">
                         function popup(url,name,windowWidth,windowHeight){    
                                         myleft=(screen.width)?(screen.width-windowWidth)/2:100;	
