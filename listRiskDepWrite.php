@@ -132,7 +132,7 @@ echo mysql_error();
  <thead>
  <TR> 
 					<th width='7%'><CENTER><p>ลำดับ <i class="fa fa-sort"></i></p></CENTER></th>
-                                        <th width='7%'><CENTER><p>เลขที่ <i class="fa fa-sort"></i></p></CENTER></th>
+                                        <!--<th width='7%'><CENTER><p>เลขที่ <i class="fa fa-sort"></i></p></CENTER></th>-->
 					<th width='41%'><CENTER><p>รายการ <i class="fa fa-sort"></i></p></CENTER></th>
 					<th width='15%'><CENTER><p>ผู้เขียน <i class="fa fa-sort"></i></p></CENTER></th>
                                         <th width='10%'><CENTER><p>เกิดเมื่อ <i class="fa fa-sort"></i></p></CENTER></th>
@@ -197,7 +197,7 @@ $lookdep=$_GET[lookdep];
                                          <?  $user_check=$result['user_id']; 
                                          if($_SESSION['user_id']==$user_check){ ?>
                                         <TD height="20" align="center" ><?=($chk_page*$e_page)+$i?></TD>
-                                        <TD align="center"><a href="detailRiskInBox.php?lookdep=<?=$lookdep?>&takerisk_id=<?=$result[takerisk_id]?>"  <?=$class?> ><?=$result[takerisk_id]; ?> </a> </TD>
+                                        <!--<TD align="center"><a href="detailRiskInBox.php?lookdep=<?=$lookdep?>&takerisk_id=<?=$result[takerisk_id]?>"  <?=$class?> ><?=$result[takerisk_id]; ?> </a> </TD>-->
 					<TD><a href="detailRiskInBox.php?lookdep=<?=$lookdep?>&takerisk_id=<?=$result[takerisk_id]?>"  <?=$class?> ><?=$result[name]; ?> </a> </TD>
 					<TD><a href="detailRiskInBox.php?lookdep=<?=$lookdep?>&takerisk_id=<?=$result[takerisk_id]?>"  <?=$class?> ><?=$result[user_fname]; ?> <?=$result[user_lname]; ?></a> </TD>
                                         <TD ><center><a href="detailRiskInBox.php?lookdep=<?=$lookdep?>&takerisk_id=<?=$result[takerisk_id]?>"  <?=$class?> > <?php echo DateThai1($take_date);?></a></center></TD>
@@ -205,7 +205,7 @@ $lookdep=$_GET[lookdep];
 					<TD ><center><a href="detailRiskInBox.php?lookdep=<?=$lookdep?>&takerisk_id=<?=$result[takerisk_id]?>"  <?=$class?> ><?php echo $status;?></a></center></TD>					 
                                          <? }else{?>
                                         <TD height="20" align="center" ><?=($chk_page*$e_page)+$i?></TD>
-                                        <TD align="center"><a href="#"  <?=$class?> ><?=$result[takerisk_id]; ?> </a> </TD>
+                                        <!--<TD align="center"><a href="#"  <?=$class?> ><?=$result[takerisk_id]; ?> </a> </TD>-->
 					<TD><a href="#"  <?=$class?> ><?=$result[name]; ?> </a> </TD>
 					<TD><a href="#"  <?=$class?> ><?=$result[user_fname]; ?> <?=$result[user_lname]; ?></a> </TD>
                                         <TD ><center><a href="#"  <?=$class?> > <?php echo DateThai1($take_date);?></a></center></TD>

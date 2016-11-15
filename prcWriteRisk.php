@@ -85,7 +85,7 @@
 if($_POST[method]=='update'){
 		$takerisk_id=$_POST[takerisk_id];
 
- 		$sqlUpdate=mysql_query("update takerisk   SET  take_first='$take_first', take_counsel='$take_counsel',hn='$hn',an='$an',take_date='$take_date',take_time='$take_time',
+ 		$sqlUpdate=mysql_query("update takerisk   SET  take_first='$take_first', take_counsel='$take_counsel',hn='$hn',an='$an',take_date='$take_date',take_time='$take_time',take_time2='$take_time',
 		level_risk='$level_risk',take_dep='$take_dep',category='$category',subcategory='$subcategory',take_place='$take_place',
 		take_other='$take_other',take_detail='$take_detail' where  takerisk_id='$takerisk_id'");
 							if($sqlUpdate==false){
@@ -212,7 +212,7 @@ if($_POST[method]=='update'){
 							}					
 		}else{
 		$user_id=$_SESSION[user_id];
-		$sqlInsert=mysql_query("insert into takerisk   SET  take_first='$take_first', take_counsel='$take_counsel', hn='$hn',an='$an',take_date='$take_date',take_time='$take_time',
+		$sqlInsert=mysql_query("insert into takerisk   SET  take_first='$take_first', take_counsel='$take_counsel', hn='$hn',an='$an',take_date='$take_date',take_time='$take_time',take_time2='$take_time',
 		level_risk='$level_risk',take_dep='$check_dep',res_dep='$take_dep',category='$category',subcategory='$subcategory',take_place='$take_place',
 		take_other='$take_other',take_detail='$take_detail',take_rec_date='$take_rec_date',
 		take_rec_time='$take_rec_time',take_file1='$take_file1',take_file2='$take_file2',take_file3='$take_file3',user_id='$user_id' ,move_status='Y' ");

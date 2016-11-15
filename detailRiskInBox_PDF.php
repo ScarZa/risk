@@ -1,5 +1,32 @@
-<?php include 'header.php';?>
+<?php @session_start(); ?>
+<?php include 'connect.php'; ?>
 <?php if(empty($_SESSION['user_id'])){echo "<meta http-equiv='refresh' content='0;url=index.php'/>";exit();} ?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <title>ระบบบริหารความเสี่ยงโรงพยาบาล</title>
+        <LINK REL="SHORTCUT ICON" HREF="./images/logo.png">
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <!-- Add custom CSS here -->
+        <link href="css/sb-admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <!-- Page Specific CSS -->
+        <link rel="stylesheet" href="css/morris-0.4.3.min.css">
+        <link rel="stylesheet" href="css/stylelist.css">
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/excellentexport.js"></script>
+
+        <!-- InstanceBeginEditable name="head" -->
+        <script language="javascript" src="chart/FusionCharts/FusionCharts.js"></script>
+    </head>
+    <body>
+
 <?php include 'jquery.php';
 $status_process=$_REQUEST['status_process']; ?>
 <script type="text/javascript">
@@ -23,23 +50,6 @@ function printDiv(divName) {
      document.body.innerHTML = originalContents;
 }
 </script>
-        <div class="row">
-          <div class="col-lg-12">
-            <h1>Form <small>รายละเอียด/ดำเนินการความเสี่ยง</small></h1>
-            <ol class="breadcrumb">
-              <li><a href="index.php"><i class="fa fa-home"></i> หน้าหลัก</a></li>
-              <?php  if($_SESSION[admin]=='Y' or $_SESSION[admin]=='A'){?>
-              <li><a href="listRiskInBox.php"><i class="fa fa-envelope"></i> ความเสี่ยงที่ได้รับ</a></li>
-              <?php }?>
-              <li class="active"><i class="fa fa-envelope"></i> รายละเอียด/ดำเนินการความเสี่ยง</li>
-            </ol>
-            <div class="alert alert-info alert-dismissable">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              รายละเอียดความเสี่ยง <a class="alert-link" target="_blank" href="#">โอกาสที่จะประสบกับความสูญเสีย หรือสิ่งไม่พึงประสงค์ โอกาสความน่าจะเป็นที่จะเกิดอุบัติการณ์</a> 
-            </div>
-          </div>
-        </div><!-- /.row -->
-
 <?php
 $user_edit=$_SESSION['user_id'];
 $takerisk_id=$_GET[takerisk_id];

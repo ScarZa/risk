@@ -10,10 +10,10 @@ if ($ID == '') {
     ?>
     <h2>คณะกรรมการบริหารความเสี่ยง</h2>
 <?php } ?>
-<H1><small>รายงานความเสี่ยงที่ได้รับทั้งหมด</small></H1>
+<H1><small>รายงานสรุปเสี่ยงทั้งหมด</small></H1>
 <ol class="breadcrumb">
     <li><a href="index.php"><i class="fa fa-home"></i> หน้าหลัก</a></li>
-    <li class="active"><i class="fa fa-envelope"></i> รายงานความเสี่ยงที่ได้รับทั้งหมด</li>
+    <li class="active"><i class="fa fa-envelope"></i> รายงานสรุปความเสี่ยงทั้งหมด</li>
 </ol>
 <?php if ($ID == '') {?>
 <div class="alert alert-info alert-dismissable">
@@ -77,7 +77,7 @@ if ($ID == '') {
 
 <br><br><br><br>
         </div>
-<div align="right"><font color="red"><b>** สามารถเลือกดูเฉพาะช่วงเวลาได้</b></font></div>
+<div align="right"><font color="red"><b>** สามารถเลือกดูเฉพาะช่วงเวลาได้ หรือดูเฉพาะช่วงเวลาและหมวดได้</b></font></div>
     <?php }else{?>
 <div class="alert alert-info alert-dismissable">
 <div class="form-group" align="right"> 

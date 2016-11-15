@@ -64,8 +64,9 @@ echo mysql_error();
     <div class="row">
           <div class="col-lg-12">
           <!-- ค้นหา -->
-          <!--<input type="image" src='images/printer.png' onclick="printDiv('divprint')" align="right" title='ปริ้นท์หน้านี้'>  
-           <div id="divprint">-->
+          <a href="#" onClick="window.open('detailRiskInBox_PDF.php?takerisk_id=<?= $takerisk_id?>','','width=700,height=900'); return false;" title="ปริ้นท์หน้านี้">
+              <input type="image" src='images/printer.png' onclick="" align="right" title='ปริ้นท์หน้านี้'></a>
+           <div id="divprint">
            <div class="panel panel-primary">
               <div class="panel-heading">
                 <h3 class="panel-title"><span class="fa fa-envelope"></span> Detail</h3>
@@ -112,8 +113,6 @@ echo mysql_error();
               </thead>
 
                <div class="text-right">
-                         <a href="#" onClick="window.open('detailRiskInBox_PDF.php?takerisk_id=<?= $takerisk_id?>','','width=700,height=900'); return false;" title="ปริ้นท์หน้านี้"><img src="images/printer.png"></a>
-    
                <?php 
                $takerisk=$result[takerisk_id];
                $sqlCheckMove=mysql_query("select mng_status from mngrisk where takerisk_id='$takerisk' ");

@@ -23,13 +23,22 @@
 
         <!-- InstanceBeginEditable name="head" -->
         <script language="javascript" src="chart/FusionCharts/FusionCharts.js"></script>
-        <style type="text/css">
+<!--<style type="text/css">
 html{
 -moz-filter:grayscale(100%);
 -webkit-filter:grayscale(100%);
 filter:gray;
 filter:grayscale(100%);
 }
+</style>-->
+<style type="text/css">
+.black-ribbon {   position: fixed;   z-index: 9999;   width: 70px; }
+@media only all and (min-width: 768px) { .black-ribbon { width: auto; } }
+
+.stick-left { left: 0; }
+.stick-right { right: 0; }
+.stick-top { top: 0; }
+.stick-bottom { bottom: 0; }
 </style>
         <script type="text/javascript">
                         function popup(url,name,windowWidth,windowHeight){    
@@ -140,7 +149,8 @@ filter:grayscale(100%);
     </head>
 
     <body Onload="bodyOnload();">
-
+                <!-- Top Left -->
+<img src="https://goo.gl/Yl6KNg" class="black-ribbon stick-top stick-left"/>
         <div id="wrapper">
             <!-- Sidebar -->
             <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -268,7 +278,7 @@ filter:grayscale(100%);
                                             $user_dep = $_SESSION[user_dep_id];
                                             $sql = mysql_query("select count(m1.mngrisk_id) AS inbox from mngrisk m1 
                 LEFT OUTER JOIN takerisk t1 ON t1.takerisk_id = m1.takerisk_id 
-                WHERE t1.res_dep = '$user_dep' and t1.move_status='N' and m1.mng_status='N' and t1.recycle='N' ");
+                WHERE t1.res_dep = '$user_dep' and t1.move_status='N' and m1.mng_status='N' and t1.recycle='N' limit 25");
                                             $result = mysql_fetch_assoc($sql);
                                             echo $inbox = $result[inbox];
                                             ?></span> <b class="caret"></b></a>
@@ -280,7 +290,7 @@ filter:grayscale(100%);
                 LEFT OUTER JOIN takerisk t1 ON t1.takerisk_id = m1.takerisk_id 
                 LEFT OUTER JOIN subcategory s1 ON t1.subcategory = s1.subcategory 
                 WHERE t1.res_dep = '$user_dep' and t1.move_status='N' and m1.mng_status='N' 
-                ORDER BY m1.mngrisk_id DESC   ");
+                ORDER BY m1.mngrisk_id DESC limit 25");
                                         echo mysql_error();
 
                                         while ($result = mysql_fetch_assoc($sql)) {
