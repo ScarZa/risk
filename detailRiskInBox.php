@@ -66,15 +66,14 @@ echo mysql_error();
           <!-- ค้นหา -->
           <a href="#" onClick="window.open('detailRiskInBox_PDF.php?takerisk_id=<?= $takerisk_id?>','','width=700,height=900'); return false;" title="ปริ้นท์หน้านี้">
               <input type="image" src='images/printer.png' onclick="" align="right" title='ปริ้นท์หน้านี้'></a>
-           <div id="divprint">
            <div class="panel panel-primary">
               <div class="panel-heading">
                 <h3 class="panel-title"><span class="fa fa-envelope"></span> Detail</h3>
               </div>
               <div class="panel-body">
-              <table width='100%'>
+              <table width='auto'>
               <thead>
-              <tr><th width='25%' valign="top">HN : </th><td  width='80%'><?php echo $result[hn];?></td></tr>    
+              <tr><th width='30%' valign="top">HN : </th><td  width='70%'><?php echo $result[hn];?></td></tr>    
               <tr><th valign="top">AN : </th> <td><?php echo $result[an];?></td></tr>
               <tr><th valign="top">บุคลากรที่ประสบเหตุการณ์ : </th> <td><?php echo $result[take_other];?></td></tr>  
               <tr><th valign="top">วันที่เกิดเหตุ : </th> <td><?php echo DateThai1($take_date);?></td></tr> 
@@ -84,7 +83,7 @@ echo mysql_error();
                <tr><th valign="top">หน่วยงานที่เกี่ยวข้อง : </th> <td><?php echo $result[department_name]; $take_dep=$result[res_dep];?></td></tr> 
                <tr><th valign="top">หมวดความเสี่ยง : </th> <td><?php echo $result[category_name];?></td></tr>
                <tr><th valign="top">รายการความเสี่ยง : </th> <td><?php echo $result[subcategory_name];?></td></tr>
-             	       <tr><th valign="top">ระดับ : </th> <td><?php echo $level_risk=$result[level_risk];?></td></tr>  
+               <tr><th valign="top">ระดับ : </th> <td><?php echo $level_risk=$result[level_risk];?></td></tr>  
                <tr><th valign="top">รายละเอียดเหตุการณ์ความเสี่ยง : </th> <td><?php echo $result[take_detail];?></td></tr> 
 	       <tr><th valign="top">การแก้ไขเบื้องต้น : </th> <td><?php echo $result[take_first];?></td></tr> 
                <tr><th valign="top">ข้อเสนอแนะ : </th> <td><?php echo $result[take_counsel];?></td></tr>
@@ -106,31 +105,29 @@ echo mysql_error();
                if($result[return_risk]=='Y'){?>
                <tr><th>ผู้ส่งคืน : </th><td> <?= $result[return_user]?>  &nbsp;&nbsp;<b>วันที่ :</b> <?php if($result[return_date]!=NULL){ echo DateThai1($result[return_date]);}?><font color='red'>(ดูได้เฉพาะคณะกรรมการบริหารความเสี่ยง)</font></td></tr>   
                                             
-               <? }
+               <?php }
                if($result[recycle]=='Y'){ ?>
                <tr><th valign="top">เหตุผลที่ย้ายลงถังขยะ : </th> <td><?php echo $result[detail_recycle];?></td></tr>
-               <? }?>
+               <?php }?>
               </thead>
 
-               <div class="text-right">
+               <div class="text-right" style="float: right;width: auto">
                <?php 
                $takerisk=$result[takerisk_id];
                $sqlCheckMove=mysql_query("select mng_status from mngrisk where takerisk_id='$takerisk' ");
                $resultCheckMove=mysql_fetch_assoc($sqlCheckMove);
                if(($resultCheckMove[mng_status]=='N' and $result['res_dep']==$_SESSION[user_dep_id]) or $admin=='A'){
                ?>
-                 <a href='prcWriteRisk.php?method=move_risk&takerisk_id=<?=$result[takerisk_id]?>'>ส่งคืนความเสี่ยง <i class="fa fa-arrow-circle-left"></i></a>
-                <?php } ?>
-		<?php 
+                   <a href='prcWriteRisk.php?method=move_risk&takerisk_id=<?=$result[takerisk_id]?>'>ส่งคืนความเสี่ยง <i class="fa fa-arrow-circle-left"></i></a><br><br>
+                <?php } 
                 if(($admin=='Y' or $admin=='A') and $result[recycle]=='N'){?>
-                 <br><br><a href="#" onclick="return popup('pass_risk.php?takerisk_id=<?=$result[takerisk_id]?>',popup,400,300);">ส่งต่อความเสี่ยง <i class="fa fa-arrow-circle-right"></i></a>
-                <?php }?>
-			<?php if($admin=='Y' and $result[recycle]=='N'){?>
+                 <a href="#" onclick="return popup('pass_risk.php?takerisk_id=<?=$result[takerisk_id]?>',popup,400,300);">ส่งต่อความเสี่ยง <i class="fa fa-arrow-circle-right"></i></a>
+                <?php } if($admin=='Y' and $result[recycle]=='N'){?>
             <br><br><a href='frmWriteRisk.php?method=edit&takerisk_id=<?=$result[takerisk_id]?>'>แก้ไขข้อความไม่เหมาะสม <i class="fa fa-edit"></i></a>
             <br><br><a href='frmWriteRisk.php?check=1&method=edit&&takerisk_id=<?=$result[takerisk_id]?>'>แก้ไขหมวดและรายการความเสี่ยง <i class="fa fa-edit"></i></a>
             <br><br><a href='detail_recycle.php?takerisk_id=<?=$result[takerisk_id]?>'>ย้ายเข้าถังขยะ <i class="fa fa-trash-o"></i></a>
             <br><br><a href='prcNomal_RcaForm.php?takerisk_id=<?=$result[takerisk_id]?>'>ย้ายไปประเมิน <i class="fa fa-bolt"></i></a>
-      <?php } ?>
+                <?php } ?>
 		
                 </div>
               </table>
@@ -194,8 +191,7 @@ echo mysql_error();
              		 
             	  </div>
               </div>
-          </div>    
-
+          </div></div>
 
  
  <?php include 'footer.php';?>
