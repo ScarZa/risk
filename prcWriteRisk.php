@@ -107,7 +107,7 @@ if($_POST[method]=='update'){
 								              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
 								               <a class='alert-link' target='_blank' href='#'><center>แก้ไขข้อมูลเรียบร้อย</center></a> 
 								            </div>";			
-										echo" <META HTTP-EQUIV='Refresh' CONTENT='1;URL=changeRisk.php'>";
+										echo" <META HTTP-EQUIV='Refresh' CONTENT='1;URL=changeRisk.php?unset=1'>";
 
 								}		
 		}else if($_GET[method]=='delete'){
