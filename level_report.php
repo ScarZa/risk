@@ -1,6 +1,6 @@
 <?php  session_start(); ?>
 <?php if(empty($_SESSION['user_id'])){echo "<meta http-equiv='refresh' content='0;url=index.php'/>";exit();} ?>
-<?php include 'header.php';?>
+<?php include 'header.php';if(isset($_GET['unset'])){ unset_session();}?>
 		<?php 
 		 	$user_id = $_SESSION[user_id];
          	$sqlUser = mysql_query("select admin from user where user_id='$user_id' ");

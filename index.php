@@ -1,5 +1,5 @@
 <?php @session_start(); ?>
-<?php include 'header.php'; ?>
+<?php include 'header.php';if(isset($_GET['unset'])){ unset_session();} ?>
 <?php
                             $sql = mysql_query("select * from  hospital");
                             $resultHos = mysql_fetch_assoc($sql);

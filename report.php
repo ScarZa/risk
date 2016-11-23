@@ -1,5 +1,5 @@
-	
-	<?php
+	<?php include 'function/unset.php';?>
+	<?php   if(isset($_GET['unset'])){ unset_session();}
 		if($_GET[type]=='1'){
 		include'dep_report.php';
 		}else if($_GET[type]=='2'){

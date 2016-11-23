@@ -168,7 +168,7 @@ filter:grayscale(100%);
                     $sql = mysql_query("select * from  hospital");
                     $resultHos = mysql_fetch_assoc($sql);
                     ?>
-                    <a class="navbar-brand" href="./"><font color='#fedd00'><b>RM - JV System v.1.3 </b></font><!--ระบบบริหารความเสี่ยง <? echo $resultHos['name']; ?>--></a>
+                    <a class="navbar-brand" href="index.php?unset=1"><font color='#fedd00'><b>RM - JV System v.1.3 </b></font><!--ระบบบริหารความเสี่ยง <? echo $resultHos['name']; ?>--></a>
                 </div>
                 <?php
                 if ($_SESSION['user_id'] != '') {
@@ -181,35 +181,35 @@ filter:grayscale(100%);
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
 
                     <ul class="nav  navbar-custom navbar-nav side-nav">
-                        <li><a href="./"><i class="fa fa-home"></i> หน้าหลัก</a></li> 		
+                        <li><a href="index.php?unset=1"><i class="fa fa-home"></i> หน้าหลัก</a></li> 		
                         <?php if ($_SESSION['user_id'] != '') { ?>
-                            <li><a href="frmBeforeWriteRisk.php"><i class="fa fa-edit"></i> เขียนความเสี่ยง</a></li>
+                            <li><a href="frmBeforeWriteRisk.php?unset=1"><i class="fa fa-edit"></i> เขียนความเสี่ยง</a></li>
                             <?php if ($admin == 'A') { ?>
-                                <li><a href="listRiskInBox2.php"><i class="fa fa-envelope"></i> ความเสี่ยงของฝ่าย</a></li>
+                                <li><a href="listRiskInBox2.php?unset=1"><i class="fa fa-envelope"></i> ความเสี่ยงของฝ่าย</a></li>
                                 <? } ?>
-                                <li><a href="listRiskInBox.php"><i class="fa fa-envelope"></i> ความเสี่ยงที่ได้รับ</a></li>
-                                <li><a href="listRiskDepWrite.php?lookdep=true"><i class="fa fa-bookmark-o"></i> ประวัติการรายงานความเสี่ยง</a></li>
+                                <li><a href="listRiskInBox.php?unset=1"><i class="fa fa-envelope"></i> ความเสี่ยงที่ได้รับ</a></li>
+                                <li><a href="listRiskDepWrite.php?lookdep=true&unset=1"><i class="fa fa-bookmark-o"></i> ประวัติการรายงานความเสี่ยง</a></li>
                             <?php } //$_SESSION['user_id']!=''  ?>
                             <?php if ($admin == 'Y') { ?>
                                 <!--<li><a href="prac_fullcalendar.php"><i class="fa fa-calendar"></i> ปฏิทินความเสี่ยง</a></li>-->
-                                <li><a href="listRiskInBox3.php"><i class="fa fa-envelope"></i> ความเสี่ยงทั้งหมด/ติดตามประเมินผล</a></li>
-                                <li><a href="changeRisk.php"><i class="fa fa-bell"></i> รายการแจ้งย้ายความเสี่ยง</a></li>
-                                <li><a href="listRiskRecycle.php"><i class="fa fa-trash-o"></i> รายการความเสี่ยงในถังขยะ</a></li>
+                                <li><a href="listRiskInBox3.php?unset=1"><i class="fa fa-envelope"></i> ความเสี่ยงทั้งหมด/ติดตามประเมินผล</a></li>
+                                <li><a href="changeRisk.php?unset=1"><i class="fa fa-bell"></i> รายการแจ้งย้ายความเสี่ยง</a></li>
+                                <li><a href="listRiskRecycle.php?unset=1"><i class="fa fa-trash-o"></i> รายการความเสี่ยงในถังขยะ</a></li>
 
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o"></i> รายงานของคณะกรรมการ <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="report.php?type=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่รายงาน</a></li>
-                                        <li><a href="report.php?type=9"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่เกี่ยวข้อง</a></li>
-                                        <li><a href="report.php?type=2"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>จำแนกด้าน</a></li>
-                                        <li><a href="report.php?type=3"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>จำแนกรายเดือน</a></li>
-                                        <li><a href="report.php?type=4"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>แยกตามด้านความเสี่ยง<br>แต่ละเดือน</a></li>               
-                                        <li><a href="Recurrence_risk.php"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>สรุปความเสี่ยงทั้งหมด</a></li> 
+                                        <li><a href="report.php?type=1&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่รายงาน</a></li>
+                                        <li><a href="report.php?type=9&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่เกี่ยวข้อง</a></li>
+                                        <li><a href="report.php?type=2&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>จำแนกด้าน</a></li>
+                                        <li><a href="report.php?type=3&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>จำแนกรายเดือน</a></li>
+                                        <li><a href="report.php?type=4&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>แยกตามด้านความเสี่ยง<br>แต่ละเดือน</a></li>               
+                                        <li><a href="Recurrence_risk.php?unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>สรุปความเสี่ยงทั้งหมด</a></li> 
                                         <!--<li><a href="report.php?type=5"><i class="fa fa-bar-chart-o"></i> จำนวนความเสี่ยง<br>ที่เกิดขึ้นซ้ำ</a></li>-->
-                                        <li><a href="level_report.php"><i class="fa fa-bar-chart-o"></i> จำนวนความเสี่ยง<br>ตามระดับความรุนแรง</a></li> 
+                                        <li><a href="level_report.php?unset=1"><i class="fa fa-bar-chart-o"></i> จำนวนความเสี่ยง<br>ตามระดับความรุนแรง</a></li> 
                                         <li><a href="session_search.php?pct=Y"><i class="fa fa-bar-chart-o"></i> ความเสี่ยงเกี่ยวกับทีม PCT</a></li> 
                                         <li><a href="session_search.php?ic=Y"><i class="fa fa-bar-chart-o"></i> ความเสี่ยงเกี่ยวกับทีม IC</a></li> 
-                                        <li><a href="main_department_report.php?type=6"><i class="fa fa-bar-chart-o"></i> หน่วยงานที่เขียนความเสี่ยง</a></li>
+                                        <li><a href="main_department_report.php?type=6&unset=1"><i class="fa fa-bar-chart-o"></i> หน่วยงานที่เขียนความเสี่ยง</a></li>
                                     </ul>            
                                 </li>           
                             <?php } //admin = Y 
@@ -217,8 +217,8 @@ filter:grayscale(100%);
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o"></i> รายงานของฝ่ายงาน <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                       <li><a href="Recurrence2_risk.php"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงทั้งหมด</a></li> 
-                                       <li><a href="main_dep_report.php"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่เกี่ยวข้อง</a></li>
+                                       <li><a href="Recurrence2_risk.php?unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงทั้งหมด</a></li> 
+                                       <li><a href="main_dep_report.php?unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่เกี่ยวข้อง</a></li>
                                     </ul>
                                 </li>
                             <?php } 
@@ -226,13 +226,13 @@ filter:grayscale(100%);
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o"></i> รายงานของหน่วยงาน <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="report.php?type=6"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เขียน</a></li>
-                                        <li><a href="report.php?type=10"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เกี่ยวข้อง</a></li>
-                                        <li><a href="report.php?type=7"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เขียน<br>จำแนกรายเดือน</a></li>
-                                        <li><a href="report.php?type=8"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>แยกตามด้านความเสี่ยง<br>แต่ละเดือน</a></li>
-                                        <li><a href="Recurrence_risk.php?id=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงทั้งหมด</a></li>
+                                        <li><a href="report.php?type=6&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เขียน</a></li>
+                                        <li><a href="report.php?type=10&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เกี่ยวข้อง</a></li>
+                                        <li><a href="report.php?type=7&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เขียน<br>จำแนกรายเดือน</a></li>
+                                        <li><a href="report.php?type=8&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>แยกตามด้านความเสี่ยง<br>แต่ละเดือน</a></li>
+                                        <li><a href="Recurrence_risk.php?id=1&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงทั้งหมด</a></li>
                                         <!--<li><a href="report.php?type=5"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>จำนวนความเสี่ยงซ้ำ</a></li>-->
-                                        <li><a href="main_department_report_user.php"><i class="fa fa-bar-chart-o"></i> บุคลากรในหน่วยงาน<br>ที่เขียนความเสี่ยง</a></li>
+                                        <li><a href="main_department_report_user.php?unset=1"><i class="fa fa-bar-chart-o"></i> บุคลากรในหน่วยงาน<br>ที่เขียนความเสี่ยง</a></li>
                                     </ul>            
                                 </li>
                             <?php } //$_SESSION['user_id']!=''  ?>
@@ -242,12 +242,12 @@ filter:grayscale(100%);
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog fa-spin"></i> ตั้งค่า <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="frmHospital.php"><i class="fa fa-cog fa-spin"></i> โรงพยาบาล</a></li>
-                                        <li><a href="frmDepartment.php"><i class="fa fa-cog fa-spin"></i> ฝ่าย/ศูนย์/กลุ่มงาน</a></li>
-                                        <li><a href="frmUser.php"><i class="fa fa-cog fa-spin"></i> ผู้ใช้งาน</a></li>
-                                        <li><a href="frmPlace.php"><i class="fa fa-cog fa-spin"></i> สถานที่เกิดเหตุ</a></li>
-                                        <li><a href="frmCategory.php"><i class="fa fa-cog fa-spin"></i> หมวดความเสี่ยง</a></li>
-                                        <li><a href="frmSubCategory.php"><i class="fa fa-cog fa-spin"></i> รายการความเสี่ยง</a></li>
+                                        <li><a href="frmHospital.php?unset=1"><i class="fa fa-cog fa-spin"></i> โรงพยาบาล</a></li>
+                                        <li><a href="frmDepartment.php?unset=1"><i class="fa fa-cog fa-spin"></i> ฝ่าย/ศูนย์/กลุ่มงาน</a></li>
+                                        <li><a href="frmUser.php?unset=1"><i class="fa fa-cog fa-spin"></i> ผู้ใช้งาน</a></li>
+                                        <li><a href="frmPlace.php?unset=1"><i class="fa fa-cog fa-spin"></i> สถานที่เกิดเหตุ</a></li>
+                                        <li><a href="frmCategory.php?unset=1"><i class="fa fa-cog fa-spin"></i> หมวดความเสี่ยง</a></li>
+                                        <li><a href="frmSubCategory.php?unset=1"><i class="fa fa-cog fa-spin"></i> รายการความเสี่ยง</a></li>
                                         <li><a href="backup.php" onclick="return confirm('กรุณายืนยันการสำรองข้อมูลอีกครั้ง !!!')"><i class="fa fa-cog fa-spin"></i> สำรองข้อมูล</a></li>
                                         <li><a href="#" onClick="window.open('openDB.php','','width=400,height=350'); return false;" title="ข้อมูลสำรอง"><i class="fa fa-cog fa-spin"></i> DataBase</a></li>
                                     </ul>
@@ -443,6 +443,7 @@ filter:grayscale(100%);
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
+            <?php include 'function/unset.php';?>
             <script src="js/jquery.min.js"></script>
             <script src="js/bootstrap.js"></script>
             <!--<script langauge="javascript">

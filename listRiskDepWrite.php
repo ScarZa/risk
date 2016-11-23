@@ -1,4 +1,4 @@
-<?php include 'header.php';?>
+<?php include 'header.php';if(isset($_GET['unset'])){ unset_session();}?>
 <?php if(empty($_SESSION['user_id'])){echo "<meta http-equiv='refresh' content='0;url=index.php'/>";exit();} ?>
 <?php  //แสดงข้อความตามความยาวตัวอักษรที่กำหนด substr("123456789",0,5);?>
         <div class="row">
