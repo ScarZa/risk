@@ -1,4 +1,4 @@
-<?php include 'header.php';?>
+<?php include 'header.php';if(isset($_GET['unset'])){ unset_session();}?>
 <h2>คณะกรรมการบริหารความเสี่ยง</h2>
  <H1><small>รายงานภาพรวมของคณะกรรมารบริหารความเสี่ยงทั้งหมด</small></H1>
 <form method="post" action="" enctype="multipart/form-data" class="navbar-form navbar-right">

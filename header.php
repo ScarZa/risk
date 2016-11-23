@@ -199,11 +199,11 @@ filter:grayscale(100%);
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o"></i> รายงานของคณะกรรมการ <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="report.php?type=1&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่รายงาน</a></li>
-                                        <li><a href="report.php?type=9&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่เกี่ยวข้อง</a></li>
-                                        <li><a href="report.php?type=2&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>จำแนกด้าน</a></li>
-                                        <li><a href="report.php?type=3&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>จำแนกรายเดือน</a></li>
-                                        <li><a href="report.php?type=4&unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>แยกตามด้านความเสี่ยง<br>แต่ละเดือน</a></li>               
+                                        <li><a href="report.php?type=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่รายงาน</a></li>
+                                        <li><a href="report.php?type=9"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>หน่วยงานที่เกี่ยวข้อง</a></li>
+                                        <li><a href="report.php?type=2"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>จำแนกด้าน</a></li>
+                                        <li><a href="report.php?type=3"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>จำแนกรายเดือน</a></li>
+                                        <li><a href="report.php?type=4"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>แยกตามด้านความเสี่ยง<br>แต่ละเดือน</a></li>               
                                         <li><a href="Recurrence_risk.php?unset=1"><i class="fa fa-bar-chart-o"></i> รายงานความเสี่ยง :<br>สรุปความเสี่ยงทั้งหมด</a></li> 
                                         <!--<li><a href="report.php?type=5"><i class="fa fa-bar-chart-o"></i> จำนวนความเสี่ยง<br>ที่เกิดขึ้นซ้ำ</a></li>-->
                                         <li><a href="level_report.php?unset=1"><i class="fa fa-bar-chart-o"></i> จำนวนความเสี่ยง<br>ตามระดับความรุนแรง</a></li> 
@@ -226,10 +226,10 @@ filter:grayscale(100%);
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o"></i> รายงานของหน่วยงาน <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="report.php?type=6&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เขียน</a></li>
-                                        <li><a href="report.php?type=10&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เกี่ยวข้อง</a></li>
-                                        <li><a href="report.php?type=7&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เขียน<br>จำแนกรายเดือน</a></li>
-                                        <li><a href="report.php?type=8&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>แยกตามด้านความเสี่ยง<br>แต่ละเดือน</a></li>
+                                        <li><a href="report.php?type=6"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เขียน</a></li>
+                                        <li><a href="report.php?type=10"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เกี่ยวข้อง</a></li>
+                                        <li><a href="report.php?type=7"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงที่เขียน<br>จำแนกรายเดือน</a></li>
+                                        <li><a href="report.php?type=8"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>แยกตามด้านความเสี่ยง<br>แต่ละเดือน</a></li>
                                         <li><a href="Recurrence_risk.php?id=1&unset=1"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>ความเสี่ยงทั้งหมด</a></li>
                                         <!--<li><a href="report.php?type=5"><i class="fa fa-bar-chart-o"></i> สรุปความเสี่ยง :<br>จำนวนความเสี่ยงซ้ำ</a></li>-->
                                         <li><a href="main_department_report_user.php?unset=1"><i class="fa fa-bar-chart-o"></i> บุคลากรในหน่วยงาน<br>ที่เขียนความเสี่ยง</a></li>
