@@ -43,17 +43,18 @@ where  mngrisk.takerisk_id='$takerisk_id'");
      echo	DateThai1($check_date);}?></font><BR> 
 <? if($admin=='Y'){ ?>
  <label>การประเมินผลของคณะกรรมการ</label><BR>
+ <?php if($result2['admin_check']=='G'){ echo "<b style='color:blue'>ผ่าน</b>";}else{?>
  <form role="form" action='process_admin_check.php' enctype="multipart/form-data" method='post'> 
      <input name="check" id="check" type="radio" value="G" <?php if($result2['admin_check']=='G'){ echo 'checked';}?> /> ผ่าน<BR>
  <input name="check" id="check" type="radio" value="Y" <?php if($result2['admin_check']=='Y'){ echo 'checked';}?> /> กำลังดำเนินการ<BR>
  <input name="check" id="check" type="radio" value="R" <?php if($result2['admin_check']=='R'){ echo 'checked';}?> /> ไม่ผ่าน<BR><BR>
  <INPUT type="hidden" name="takerisk_id" id="takerisk_id" value="<?=$takerisk_id?>"/>
  <button type="submit" class="btn btn-primary">บันทึก  </button>
-<?php
+ <?php }
 }}elseif($admin=='Y' or ($admin=='A' and $result2[main_dep]==$_SESSION[user_main_dep])
         or $result2[res_dep]==$_SESSION[user_dep_id]){
  ?>
-   <H1><small><font color="#0000ff">การแก้ไขความเสี่ยง</font></small></H1>
+ <H1><small><font color="#0000ff">การแก้ไขความเสี่ยง</font></small></H1>
  
 <form role="form" action='prcNomal_RcaForm.php' enctype="multipart/form-data" method='post'> 
 <label>วันที่วิเคราะห์ความเสี่ยง</label>    
