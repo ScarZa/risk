@@ -353,7 +353,9 @@ filter:grayscale(100%);
                                             ?> 
                                             <li class="message-preview">
                                                 <a href="detailRiskInBox.php?takerisk_id=<?php echo $result[takerisk_id]; ?>" title="New Messages">
+                                                    <?php if(!empty($result[take_file1])){?>
                                                     <span class="avatar"><img src="myfile/<?= $result[take_file1]; ?>" width="50" height="50"></span>
+                                                    <?php }?>
                                                     <span class="name"><?php echo $result[sub_name]; ?>:</span>
                                                     <span class="message"><?php echo $result[detail]; ?>...</span>
                                                     <span class="time"><i class="fa fa-clock-o"></i> <?php
