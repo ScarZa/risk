@@ -335,12 +335,19 @@ if ($_REQUEST[year] == '') {
                     $num_category = mysql_query("select count(category) as count_cate from category");
                         $count_cate = mysql_fetch_assoc($num_category);
                         $count_categ = $count_cate['count_cate'];
-                        
+                        /*
                         for ($c = 1; $c <= $count_categ; $c++) {
                             $sql_name = mysql_query("select name from category where category='$c'");
                         $cat_name = mysql_fetch_assoc($sql_name);
                             $cate_name[$c].= $cat_name['name'];
-                        }
+                        }*/
+                        $c = 1;
+                    $sql_name = mysql_query("select * from category order by category asc");
+                    while ($cat_name = mysql_fetch_assoc($sql_name)){
+                        $cate_name[$c].=$cat_name['name'];
+                        $cate_no[$c].=$cat_name['category'];
+                        $c++;
+                    }
                      
                     for ($i = -2; $i <= 9; $i++) {
 
@@ -369,10 +376,10 @@ if ($_REQUEST[year] == '') {
                         $sql_name = mysql_query("select name from category");
                         
                         
-                        for ($c = 1; $c <= $count_categ; $c++) {
+                        for ($c = 0; $c <= $count_categ; $c++) {
                         $sql = mysql_query("select count(takerisk_id) as number_risk from takerisk t1  
 						 LEFT OUTER JOIN category c1 on c1.category = t1.category
-						 where  t1.category='$c' and    t1.take_date between '$month_start' and '$month_end' and t1.move_status='N' order by number_risk DESC");
+						 where  t1.category='$cate_no[$c]' and    t1.take_date between '$month_start' and '$month_end' and t1.move_status='N' order by number_risk DESC");
                         
                         $rs = mysql_fetch_assoc($sql);
 
